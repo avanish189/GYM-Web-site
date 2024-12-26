@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Join Us | FitnessPoint</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        color: #000;
+        background: url('https://img.freepik.com/premium-photo/exercise-gym-stock-photo-ar-21-style-raw-job-id-9a03924c759f4ef6a5ab06819a30006f_997534-19895.jpg') no-repeat center center fixed;
+        background-size: cover;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        backdrop-filter: blur(5px);
+      }
+
+      header {
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        color: #fff;
+        padding: 10px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        z-index: 10;
+      }
+
+      header h1 {
+        margin: 0;
+        font-size: 24px;
+      }
+
+      header a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 18px;
+        transition: color 0.3s;
+      }
+
+      header a:hover {
+        color: #ccc;
+      }
+
+      .container {
+        max-width: 600px;
+        width: 90%;
+        padding: 40px;
+        background-color: rgba(255, 255, 255, 0.85);
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        text-align: center;
+        animation: fadeIn 1.5s ease;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .container h2 {
+        font-size: 32px;
+        margin-bottom: 20px;
+        color: #000;
+      }
+
+      .container p {
+        font-size: 18px;
+        margin-bottom: 20px;
+        color: #444;
+      }
+
+      .form-container {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .form-container input,
+      .form-container select,
+      .form-container textarea,
+      .form-container button {
+        padding: 12px;
+        font-size: 16px;
+        border: none;
+        border-radius: 5px;
+        width: 100%;
+      }
+
+      .form-container input,
+      .form-container select,
+      .form-container textarea {
+        background-color: rgba(255, 255, 255, 0.9);
+        border: 1px solid #ccc;
+        transition: border 0.3s;
+      }
+
+      .form-container input:focus,
+      .form-container select:focus,
+      .form-container textarea:focus {
+        outline: none;
+        border-color: #000;
+      }
+
+      .form-container button {
+        background-color: #000;
+        color: #fff;
+        cursor: pointer;
+        transition: background-color 0.3s, transform 0.3s;
+      }
+
+      .form-container button:hover {
+        background-color: #333;
+        transform: scale(1.05);
+      }
+
+      footer {
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        color: #fff;
+        text-align: center;
+        padding: 10px 0;
+        position: fixed;
+        bottom: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>FitnessPoint</h1>
+      <a href="/index.html">Back to Home</a>
+    </header>
+
+    <div class="container">
+      <h2>Join Our Fitness Community</h2>
+      <p>Fill out the form below to become a member and start your fitness journey with us!</p>
+
+      <div class="form-container">
+        <input type="text" id="name" placeholder="Full Name" required />
+        <input type="email" id="email" placeholder="Email Address" required />
+        <input type="tel" id="phone" placeholder="Phone Number" required />
+        <select id="membership-type" required>
+          <option value="">Select Membership Type</option>
+          <option value="basic">Basic</option>
+          <option value="premium">Premium</option>
+          <option value="personal-training">Personal Training</option>
+        </select>
+        <textarea id="message" placeholder="Any specific goals or requirements?" rows="4"></textarea>
+        <button type="submit" onclick="submitForm()">Join Now</button>
+      </div>
+    </div>
+
+    <footer>
+      <p>Copyright © 2024 FitnessPoint. All rights reserved.</p>
+    </footer>
+
+    <script>
+      function submitForm() {
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const phone = document.getElementById('phone').value;
+        const membershipType = document.getElementById('membership-type').value;
+        const message = document.getElementById('message').value;
+
+        if (name && email && phone && membershipType) {
+          alert(`Thank you for joining, ${name}! We'll reach out to you soon.`);
+        } else {
+          alert('Please fill out all required fields.');
+        }
+      }
+    </script>
+  </body>
+</html>
